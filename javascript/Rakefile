@@ -1,5 +1,10 @@
-# Uso: $rake
+# ==========================================================
+# Usos:
+#   $ rake 
+#   $ rake clean
+# ==========================================================
 ComandoJISON = "jison formulario.jison -o formulario.js"
+ComandoCLEAN = "rm -f formulario.js"
 
 # Acción por defecto
 task :default => :compile
@@ -9,3 +14,9 @@ desc "Compila la gramatica formulario.jison"
 task :compile => %w{formulario.jison} do
     sh "#{ComandoJISON}"
 end
+
+desc "Eliminar archivos generados"
+task :clean do
+  sh "#{ComandoCLEAN}"
+end
+
