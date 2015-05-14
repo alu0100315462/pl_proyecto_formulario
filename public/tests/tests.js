@@ -1,6 +1,6 @@
 var assert = chai.assert;
 
-suite('Analizador Lexico', function() {
+suite('Generador de formularios', function() {
 
   setup(function(){
     if (typeof __html__ !== 'undefined') {
