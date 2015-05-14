@@ -1,0 +1,7 @@
+!title "Titulo de prueba"
+!description "Texto de explicacion de prueba."
+!truefalse "Pregunta de tipo si/no."
+!check "Pregunta tipo check.;Opcion 1;Opcion 2; Opcion 3"
+!insert "La capital de España es _ y posee _ habitantes."
+!list "Probando las listas:;lista 1;lista 2;lista 3"
+!number "Introduzca su edad:;1900;1980"
