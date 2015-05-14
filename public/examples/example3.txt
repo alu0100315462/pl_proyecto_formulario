@@ -1,3 +1,6 @@
-a = 4*2;
-b = 2*(a+1);
-a * b
+!title "¡Registrese y Gane!"
+!description "¡Solo está a un pequello paso de ganar una estupenda lavadora Famuzi!"
+!description "Solo tiene que responder a unas pocas preguntas, rellenando el formulario:"
+!insert "Me llamo _ y autorizo a Famuzi al acceso de mi tarjeta de crédito de número _ para el uso que tengan convenido."
+!check "Si responde a esta mini encuesta, nos ayudará a comprender mejor lo que desea el cliente. ¿Cuál es su marca preferida de lavadoras?;Famuzi;Famuzi y al menos otro competidor;No tiene ni idea de lavadoras"
+!number "Si es de los primeros que se registra, le ofrecemos a un precio de risa varios juegos de cocina, ¿Cuántos desea encargar?:;10;15"
