@@ -4,12 +4,12 @@
 %%
 
 \s+                 /* se ignoran los espacios */
-\#\#titulo          return 'TAG_TITULO'
-\#\#texto           return 'TAG_TEXTO'
-\"([^"])*?\"        return 'TAG_INPUT'
-\#\#sino            return 'SINO'
-\#\#check            return 'CHECK'
-\#\#lista            return 'LISTA'
+\!title             return 'TITLE'
+\!description       return 'DESCRIPTION'
+\!truefalse         return 'TRUEFALSE'
+\!check             return 'CHECK'
+\!lista             return 'LISTA'
+\"([^"])*?\"        return 'INPUT'
 <<EOF>>             return 'EOF'
 
 /lex
@@ -38,7 +38,7 @@ f
     ;
 
 titulo
-    : TAG_TITULO TAG_INPUT
+    : TITLE INPUT
         {
             var titu = $2.replace(/\"/g,"");
             $$ = P + MEN + "h1" + MAY + titu + MEN + "/h1" + MAY + P_FIN + SIG_LINEA;
@@ -46,7 +46,7 @@ titulo
     ;
     
 texto
-    : TAG_TEXTO TAG_INPUT
+    : DESCRIPTION INPUT
         {
             var text = $2.replace(/\"/g,"");
             $$ = P + text + P_FIN + SIG_LINEA;
@@ -54,7 +54,7 @@ texto
     ;
     
 sino
-    : SINO TAG_INPUT
+    : TRUEFALSE INPUT
         {
             var text = $2.replace(/\"/g,"");
             $$ = P + text + SIG_LINEA + SINO_P + SINO_F + P_FIN + SIG_LINEA;
@@ -62,14 +62,14 @@ sino
     ;
     
 check
-    : CHECK TAG_INPUT
+    : CHECK INPUT
         {
 
         }
     ;
     
 lista
-    : LISTA TAG_INPUT
+    : LISTA INPUT
         {
 
         }

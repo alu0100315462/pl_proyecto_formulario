@@ -75,8 +75,8 @@ var parser = (function(){
 var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[2,12],$V1=[1,11],$V2=[1,12],$V3=[1,13],$V4=[1,14],$V5=[5,11,13,15,17];
 var parser = {trace: function trace() { },
 yy: {},
-symbols_: {"error":2,"formulario":3,"f":4,"EOF":5,"titulo":6,"contenido":7,"TAG_TITULO":8,"TAG_INPUT":9,"texto":10,"TAG_TEXTO":11,"sino":12,"SINO":13,"check":14,"CHECK":15,"lista":16,"LISTA":17,"$accept":0,"$end":1},
-terminals_: {2:"error",5:"EOF",8:"TAG_TITULO",9:"TAG_INPUT",11:"TAG_TEXTO",13:"SINO",15:"CHECK",17:"LISTA"},
+symbols_: {"error":2,"formulario":3,"f":4,"EOF":5,"titulo":6,"contenido":7,"TITLE":8,"INPUT":9,"texto":10,"DESCRIPTION":11,"sino":12,"TRUEFALSE":13,"check":14,"CHECK":15,"lista":16,"LISTA":17,"$accept":0,"$end":1},
+terminals_: {2:"error",5:"EOF",8:"TITLE",9:"INPUT",11:"DESCRIPTION",13:"TRUEFALSE",15:"CHECK",17:"LISTA"},
 productions_: [0,[3,2],[4,2],[6,2],[10,2],[12,2],[14,2],[16,2],[7,2],[7,2],[7,2],[7,2],[7,0]],
 performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
 /* this == yyval */
@@ -614,19 +614,19 @@ case 1:return 8
 break;
 case 2:return 11
 break;
-case 3:return 9
+case 3:return 13
 break;
-case 4:return 13
+case 4:return 15
 break;
-case 5:return 15
+case 5:return 17
 break;
-case 6:return 17
+case 6:return 9
 break;
 case 7:return 5
 break;
 }
 },
-rules: [/^(?:\s+)/,/^(?:##titulo\b)/,/^(?:##texto\b)/,/^(?:"([^"])*?")/,/^(?:##sino\b)/,/^(?:##check\b)/,/^(?:##lista\b)/,/^(?:$)/],
+rules: [/^(?:\s+)/,/^(?:!title\b)/,/^(?:!description\b)/,/^(?:!truefalse\b)/,/^(?:!check\b)/,/^(?:!lista\b)/,/^(?:"([^"])*?")/,/^(?:$)/],
 conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7],"inclusive":true}}
 });
 return lexer;
