@@ -9,18 +9,27 @@ Para ello hemos diseñado ciertas reglas gramáticales que son interpretadas por
 lo recibido en otro lenguaje, en este caso HTML.
 
 La sintaxis usada para este lenguaje de dominio específico es la siguiente:
+<br>
   !title "Establece el título del formulario."
+  <br>
   !description "Establece la descripción del formulario."
+  <br>
   !description "Texto de explicacion de prueba."
+  <br>
   !truefalse "Añade al formulario un tipo Verdadero/Falso."
+  <br>
   !check "Añade al formulario un tipo chequear."
+  <br>
   !insert "Añade al formulario un tipo insertar."
+  <br>
   !list "Añade al formulario un tipo lista."
+  <br>
   !number "Añade al formulario un tipo lista de numeros."
 <br>
 <a href="http://plproyectoformulario.herokuapp.com/">Ver la web en Heroku</a>
 ###AUTORES
 <a href="http://alu0100315462.github.io/">Álvaro Suárez Chausson</a>
+<br>
 <a href="http://gcpmendez.github.io/">Germán Paz Méndez</a>
 <br>
 ###TRAVIS.
