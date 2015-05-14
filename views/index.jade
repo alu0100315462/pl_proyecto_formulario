@@ -13,9 +13,42 @@ block content
                       br
                       |                         
                       div(align='center')
+                        h2 Uso
+                        #uso(align='left')
+                          u
+                            b Sintaxis usada para el lenguaje de dominio específico:
+                          br
+                          b &nbsp&nbsp!title
+                          |  &quot;Establece el título del formulario.&quot;
+                          br
+                          |       
+                          b &nbsp&nbsp!description
+                          |  &quot;Establece la descripción del formulario.&quot;    !description &quot;Texto de explicacion de prueba.&quot;
+                          br
+                          |       
+                          b &nbsp&nbsp!truefalse 
+                          |  &quot;Añade al formulario un tipo Verdadero/Falso.&quot;
+                          br
+                          |       
+                          b &nbsp&nbsp!check 
+                          |  &quot;Añade al formulario un tipo chequear.&quot;
+                          br
+                          |       
+                          b &nbsp&nbsp!insert
+                          |  &quot;Añade al formulario un tipo insertar.&quot;
+                          br
+                          |       
+                          b &nbsp&nbsp!list 
+                          | &quot;Añade al formulario un tipo lista.&quot;
+                          br
+                          |       
+                          b &nbsp&nbsp!number 
+                          |  &quot;Añade al formulario un tipo lista de numeros.&quot;
+                          div
+                        br
                         h2 Entrada
                         |                            
-                        textarea#TA_INPUT(autofocus='', cols='80', rows='5', placeholder='Escriba aquí o arrastre un fichero JavaScript', style='border:dashed 2px black; background-color:#f5f5f5;color:#0000ff;')
+                        textarea#TA_INPUT(autofocus='', cols='80', rows='5', placeholder='Escriba aquí una entrada válida para el parser', style='border:dashed 2px black; background-color:#f5f5f5;color:#0000ff;')
                         |      
                         .loadfile
                         div
