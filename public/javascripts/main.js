@@ -39,3 +39,17 @@ $(document).ready(function () {
     downloadLink.click();
 });
 });
+
+
+$(document).ready(function () {
+  $('#BOT_PESTANA').click(function () {
+//output = 'Hello, World!';
+//window.open().document.write(output);
+output = $('#TA_OUTPUT').val();
+window.open().document.write(output);
+   //   var result = $('#TA_OUTPUT').val()
+//var OpenWindow = window.open("formulario.html", "mywin", '');
+  //      OpenWindow.dataFromParent = output; // dataFromParent is a variable in child.html
+    //    OpenWindow.init();
+  });
+});
