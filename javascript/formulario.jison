@@ -77,7 +77,7 @@ lista
 
 contenido
     : texto contenido { $$ = ($1 + $2);}
-    | sino contenido { $$ = ($1 + $2);}
+    | sino contenido  { $$ = ($1 + $2);}
     | check contenido { $$ = ($1 + $2);}
     | lista contenido { $$ = ($1 + $2);}
     | /* no hay mas contenido */ { $$ = "";}
@@ -86,11 +86,11 @@ contenido
 
 %%
 
-var SIG_LINEA = "\n";
-var MEN = "&lt;";
-var MAY = "&gt;";
-var P = MEN + "p" + MAY;
-var P_FIN = MEN + "/p" + MAY;
+var SIG_LINEA = "\n";                   /* \n */
+var MEN = "&lt;";                       /* < */
+var MAY = "&gt;";                       /* > */
+var P = MEN + "p" + MAY;                /* <p> */
+var P_FIN = MEN + "/p" + MAY;           /* </p> */
 var CABECERA = MEN + "html" + MAY + SIG_LINEA + MEN + "body" + MAY + SIG_LINEA;
 var FINAL = MEN + "/body" + MAY + SIG_LINEA + MEN + "/html" + MAY + SIG_LINEA;
 var SINO_P = "<br><input type='radio' name='sino' value='1'>Si";
