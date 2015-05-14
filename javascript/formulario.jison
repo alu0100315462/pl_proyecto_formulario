@@ -8,8 +8,9 @@
 \!description       return 'DESCRIPTION'
 \!truefalse         return 'TRUEFALSE'
 \!check             return 'CHECK'
-\!lista             return 'LISTA'
-\"([^"])*?\"        return 'INPUT'
+\!insert            return 'INSERT'
+\!list              return 'LIST'
+\"(\\.|[^"])*?\"    return 'INPUT'
 <<EOF>>             return 'EOF'
 
 /lex
@@ -75,10 +76,31 @@ check
         }
     ;
     
-lista
-    : LISTA INPUT
+list
+    : LIST INPUT
         {
+            var text = $2.replace(/\"/g,"");
+            var result = text.split(";");
+            
+            $$ = P + result[0] + P_FIN + SIG_LINEA + LISTA_L ;
+            for (i = 1; i < (result.length); i++) {
+                $$ += OPTION_L + result[i] + OPTION_R;
+            }
+            $$ += LISTA_R + SIG;
+        }
+    ;
 
+insert
+    : INSERT INPUT
+        {
+            var text = $2.replace(/\"/g,"");
+            var result = text.split("_");
+            
+            $$ = P + result[0];
+            for (i = 1; i < (result.length); i++) {
+                $$ += ENTER + result[i];
+            }
+            $$ += P_FIN + SIG;
         }
     ;
 
@@ -86,7 +108,8 @@ contenido
     : texto contenido { $$ = ($1 + $2);}
     | sino contenido  { $$ = ($1 + $2);}
     | check contenido { $$ = ($1 + $2);}
-    | lista contenido { $$ = ($1 + $2);}
+    | list contenido { $$ = ($1 + $2);}
+    | insert contenido { $$ = ($1 + $2);}
     | /* no hay mas contenido */ { $$ = "";}
     ;
 
@@ -99,9 +122,19 @@ var MEN = "&lt;";                       /* < */
 var MAY = "&gt;";                       /* > */
 var P = MEN + "p" + MAY;                /* <p> */
 var P_FIN = MEN + "/p" + MAY;           /* </p> */
-var CABECERA = MEN + "html" + MAY + SIG + MEN + "body" + MAY + SIG;
+var CABECERA = "<html>" + SIG + "<head><meta charset='utf-8'></head>" + SIG + "<body>" + SIG;
 var FINAL = MEN + "/body" + MAY + SIG + MEN + "/html" + MAY + SIG;
 var SINO_P = "<input type='radio' name='sino' value='1'>Si";
 var SINO_F = "<input type='radio' name='sino' value='2'>No";
 var CHECK_P = "<input type='checkbox' name='check' value='";
 var CHECK_F = "'>";
+
+/* !insert */
+var ENTER = "<input type='text' name='enter'>";
+
+/* !list */
+var LISTA_L = "<select name='lista'>";
+var OPTION_L = "<option>";
+var OPTION_R = "</option>";
+var LISTA_R = "</select>";
+
