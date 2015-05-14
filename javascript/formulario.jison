@@ -10,6 +10,7 @@
 \!check             return 'CHECK'
 \!insert            return 'INSERT'
 \!list              return 'LIST'
+\!number            return 'NUMBER'
 \"(\\.|[^"])*?\"    return 'INPUT'
 <<EOF>>             return 'EOF'
 
@@ -82,11 +83,11 @@ list
             var text = $2.replace(/\"/g,"");
             var result = text.split(";");
             
-            $$ = P + result[0] + P_FIN + SIG_LINEA + LISTA_L ;
+            $$ = P + result[0] + SIG_LINEA + LISTA_L ;
             for (i = 1; i < (result.length); i++) {
                 $$ += OPTION_L + result[i] + OPTION_R;
             }
-            $$ += LISTA_R + SIG;
+            $$ += LISTA_R + P_FIN + SIG;
         }
     ;
 
@@ -104,12 +105,26 @@ insert
         }
     ;
 
+number
+    : NUMBER INPUT
+        {
+            var text = $2.replace(/\"/g,"");
+            var result = text.split(";");
+            $$ = P + result[0] + SIG_LINEA ;
+
+            $$ += NUMBER_P + result[1];
+            $$ += NUMBER_F + result[2] + "'>" + SIG_LINEA;
+            $$ += P_FIN + SIG;
+        }
+    ;
+
 contenido
     : texto contenido { $$ = ($1 + $2);}
     | sino contenido  { $$ = ($1 + $2);}
     | check contenido { $$ = ($1 + $2);}
     | list contenido { $$ = ($1 + $2);}
     | insert contenido { $$ = ($1 + $2);}
+    | number contenido { $$ = ($1 + $2);}
     | /* no hay mas contenido */ { $$ = "";}
     ;
 
@@ -138,3 +153,6 @@ var OPTION_L = "<option>";
 var OPTION_R = "</option>";
 var LISTA_R = "</select>";
 
+/* !number */
+var NUMBER_P = "<input id='amount' name='amount' type='number' min='";
+var NUMBER_F = "' pattern='[1-9]*' value='";
