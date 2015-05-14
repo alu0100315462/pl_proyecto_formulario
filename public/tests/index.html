@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tests</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/tests/mocha.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+
+    <div align="center">
+        <h2>Input</h2>
+        <p>
+            Fill the input box with javascript code:
+        </p>
+        <textarea id="INPUT" cols="70" rows="10">
+            var a = "hello"; // initialize a
+            var b = function(x) {
+                    var c = 3;
+                      return x+c;
+                    };
+        </textarea>
+        <br>
+        <input id="PARSE" value=Parsear type=button>
+        <br><br>
+        <div id="cajita">
+            <pre id="OUTPUT"></pre>
+        </div>
+    </div>
+
+    <script src="chai.js"></script>
+    <script src="mocha.js"></script>
+
+    <script>mocha.setup('tdd')</script>
+
+    <script src="blanket.js"
+      data-cover-adapter="mocha-blanket.js"></script>
+
+
+    <script src="tests.js"></script>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
