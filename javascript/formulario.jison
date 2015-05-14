@@ -17,6 +17,8 @@
 
 %%
 
+
+
 /* gramatica del lenguaje */
 
 
@@ -28,9 +30,9 @@ formulario
     ;
     
 f
-    : titulo texto /*contenido*/
+    : titulo texto
         {
-            $$ = CABECERA + $1 + $2 + FINAL;
+            $$ = $1 + $2;
         }
     ;
 
@@ -38,7 +40,7 @@ titulo
     : TAG_TITULO TAG_INPUT
         {
             var titu = $2.replace(/\"/g,"");
-            $$ = P + < + "h1" + > + titu + < + "/h1" + > + P_FIN;
+            $$ = titu + "\n";
         }
     ;
     
@@ -46,7 +48,7 @@ texto
     : TAG_TEXTO TAG_INPUT
         {
             var text = $2.replace(/\"/g,"");
-            $$ = P + text + P_END;
+            $$ = text + "\n";
         }
     ;
     
@@ -59,11 +61,5 @@ contenido
     ;
 */
 
-
+%%
 var SIG_LINEA = "\n";
-var < = "&lt;";
-var > = "&gt;";
-var P = < + "p" + >;
-var P_FIN = < + "/p" + >;
-var CABECERA = < + "html" + > + SIG_LINEA + < + "body" + > + SIG_LINEA;
-var FINAL = < + "/body" + > + SIG_LINEA + < + "/html" + > + SIG_LINEA;
