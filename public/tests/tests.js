@@ -10,7 +10,7 @@ suite('Generador de formularios', function() {
   
     test("Prueba de !title", function() {
       var result;
-      result = formulario.parse("!title 'Titulo de prueba');
-      return assert.deepEqual(result, "<p><h1>Titulo de prueba</h1></p>");
+      result = parser.parse('!title "Titulo de prueba"\n');
+      return assert.deepEqual(result, "<html>\n<head><meta charset=\'utf-8\'></head>\n<body>\n&lt;p&gt;&lt;h1&gt;Titulo de prueba&lt;/h1&gt;&lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\n");
     });
 });
