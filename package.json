@@ -7,6 +7,7 @@
     "test": "mocha --compilers coffee:coffee-script/register -R spec tests/test.coffee"
   },
   "dependencies": {
+    "blanket": "^1.1.7",
     "body-parser": "~1.12.0",
     "coffee-middleware": "^0.2.1",
     "coffee-script": "^1.9.1",
