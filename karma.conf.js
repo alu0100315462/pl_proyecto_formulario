@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Thu Mar 12 2015 12:01:22 GMT+0000 (WET)
+// Generated on Fri May 15 2015 02:41:22 GMT+0000 (WET)
 
 module.exports = function(config) {
   config.set({
@@ -21,8 +21,8 @@ module.exports = function(config) {
     files: [
       "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js",
       "https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js",
-      'csv.js',
-      'tests/*.js',
+      'public/javascripts/formulario.js',
+      'public/tests/*.js',
 	    'tests/index.html'
     ],
 
@@ -36,7 +36,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-	    'tests/index.html': ['html2js']
+	    'public/tests/index.html': ['html2js']
     },
 
 
@@ -65,7 +65,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Firefox', 'PhantomJS'],
+    browsers: ['Firefox'],
 
 
     // Continuous Integration mode

@@ -10,21 +10,19 @@ lo recibido en otro lenguaje, en este caso HTML.
 
 La sintaxis usada para este lenguaje de dominio específico es la siguiente:
 <br>
-  <b>!title</b> "Establece el título del formulario."
-  <br>
-  <b>!description</b> "Establece la descripción del formulario."
+  <b>!title</b> "Titulo de prueba"
   <br>
   <b>!description</b> "Texto de explicacion de prueba."
   <br>
-  <b>!truefalse</b> "Añade al formulario un tipo Verdadero/Falso."
+  <b>!truefalse</b> "Pregunta de tipo si/no."
   <br>
-  <b>!check</b> "Añade al formulario un tipo chequear."
+  <b>!check</b> "Pregunta tipo check.;Opcion 1;Opcion 2; Opcion 3"
   <br>
-  <b>!insert</b> "Añade al formulario un tipo insertar."
+  <b>!insert</b> "Añade al formulario _ un tipo insertar _ para introducir texto en los guiones bajos."
   <br>
-  <b>!list</b> "Añade al formulario un tipo lista."
+  <b>!list</b> "Añade al formulario una lista;lista 1;lista 2;lista 3"
   <br>
-  <b>!number</b> "Añade al formulario un tipo lista de numeros."
+  <b>!number</b> "Añade al formulario un selector de numeros;numero minimo;numero predeterminado"
 <br>
 <br>
 <a href="http://plproyectoformulario.herokuapp.com/">VER LA WEB EN HEROKU</a>
