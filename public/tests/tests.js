@@ -1,5 +1,7 @@
-var assert = chai.assert;
-
+var assert, chai;
+  chai = require('chai');
+  assert = chai.assert;
+  
 suite('Generador de formularios', function() {
 
   setup(function(){
