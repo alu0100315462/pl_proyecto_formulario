@@ -2,9 +2,11 @@
   "name": "pl_proyecto_formulario",
   "version": "0.0.0",
   "private": true,
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
-    "start": "node ./bin/www",
-    "test": "gulp tests"
+    "test": "gulp test"
   },
   "dependencies": {
     "blanket": "^1.1.7",
