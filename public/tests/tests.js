@@ -1,8 +1,6 @@
-var assert, chai;
-  chai = require('chai');
-  assert = chai.assert;
-  
-describe('Generador de formularios', function() {
+var assert = chai.assert;
+
+suite('Generador de formularios', function() {
 
   setup(function(){
     if (typeof __html__ !== 'undefined') {
@@ -10,13 +8,13 @@ describe('Generador de formularios', function() {
     }
   });
   
-    it("Prueba de !title", function() {
+    test("Prueba de !title", function() {
       var result;
       result = parser.parse('!title "Titulo de prueba"\n');
       return assert.deepEqual(result, "<html>\n<head><meta charset=\'utf-8\'></head>\n<body>\n&lt;p&gt;&lt;h1&gt;Titulo de prueba&lt;/h1&gt;&lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\n");
     });
     
-    it("Prueba de !description", function() {
+    test("Prueba de !description", function() {
       var result;
       result = parser.parse('!title "Titulo de prueba"\n !description "Texto de explicacion de prueba."\n');
       return assert.deepEqual(result, "<html>\n<head><meta charset=\'utf-8\'></head>\n<body>\n&lt;p&gt;&lt;h1&gt;Titulo de prueba&lt;/h1&gt;&lt;/p&gt;\n&lt;p&gt;Texto de explicacion de prueba.&lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n\n");
